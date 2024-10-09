@@ -74,7 +74,7 @@ public class BaseTests {
 
     }
 
-    //@AfterClass
+    @AfterClass
     public void quitBrowser() {
         driver.quit();
     }

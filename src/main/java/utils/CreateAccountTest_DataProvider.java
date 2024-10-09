@@ -7,7 +7,7 @@ public class CreateAccountTest_DataProvider {
     Faker faker = new Faker();
     String fname = faker.name().firstName();
     String lname = faker.name().lastName();
-    String email = faker.internet().emailAddress(fname + lname);
+    String email = faker.internet().emailAddress(fname.toLowerCase() + lname.toLowerCase());
     String password = "Abcdefgh!";
 
     @DataProvider(name = "CreateAccountData")
