@@ -22,9 +22,9 @@ public class MyAccountPage {
     }
 
    public String getMyAccountpageHeader(){
-       WebElement message= driver.findElement(successMassage);
+       WebElement message= driver.findElement(MyAccountpageHeader);
        String text="";
-       wait.until(ExpectedConditions.visibilityOf(message));
+       wait.until(ExpectedConditions.visibilityOf(driver.findElement(MyAccountpageHeader)));
        if(message.isDisplayed()){
            text= message.getText();
        }

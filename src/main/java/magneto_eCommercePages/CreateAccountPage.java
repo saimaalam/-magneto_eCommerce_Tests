@@ -60,6 +60,7 @@ public class CreateAccountPage {
     public MyAccountPage clickCreateAnAccountButton(){
         WebElement createbutton= driver.findElement(createAnAccountButton);
         scrollToElement(createbutton);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         createbutton.click();
         return new MyAccountPage(driver);
     }

@@ -14,10 +14,11 @@ public class LoginPage {
     private By passwordField= By.id("pass");
     private By signinButton= By.id("send2");
     private By loginpageHeader=By.xpath("//h1[@class='page-title']/span");
-    WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(60));
+    WebDriverWait wait;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+        wait= new WebDriverWait(driver, Duration.ofSeconds(60));
     }
 
     public String getHearder(){
