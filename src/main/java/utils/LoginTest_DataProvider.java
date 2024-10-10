@@ -3,7 +3,7 @@ package utils;
 import org.testng.annotations.DataProvider;
 
 public class LoginTest_DataProvider {
-    @DataProvider(name = "LoginData")
+    @DataProvider(name = "LoginDatafromRegistration")
     public Object[][] generateLoginData() {
         // Access the data stored in TestDataStorage class
         String fname = TestDataStorage.registeredFirstName;
@@ -13,6 +13,14 @@ public class LoginTest_DataProvider {
 
         return new Object[][]{
                 {email, password,fname,lname},
+        };
+    }
+    @DataProvider(name = "LoginDatafromConfiguration")
+    public Object[][] ConfigureLoginData() {
+        // Access the data stored in TestDataStorage clas
+
+        return new Object[][]{
+                {"AmosDietrich@gmail.com","Abcdefgh!","Amos","Dietrich"},
         };
     }
 }

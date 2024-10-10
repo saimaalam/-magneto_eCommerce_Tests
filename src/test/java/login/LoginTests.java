@@ -8,7 +8,7 @@ import org.testng.asserts.SoftAssert;
 import utils.LoginTest_DataProvider;
 
 public class LoginTests extends BaseTests {
-    @Test(dataProvider = "LoginData",dataProviderClass = LoginTest_DataProvider.class)
+    @Test(dataProvider = "LoginDatafromConfiguration",dataProviderClass = LoginTest_DataProvider.class)
     public void TC_4_registered_user_can_sign_in(String email,String password,String fname, String lname){
        LoginPage loginPage= homePage.clickSigninLink();
        loginPage.waitForHeader();

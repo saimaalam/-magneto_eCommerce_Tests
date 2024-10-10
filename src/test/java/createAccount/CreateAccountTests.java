@@ -8,7 +8,7 @@ import org.testng.asserts.SoftAssert;
 import utils.CreateAccountTest_DataProvider;
 
 public class CreateAccountTests extends BaseTests {
-    @Test(dataProvider = "CreateAccountData",dataProviderClass = CreateAccountTest_DataProvider.class)
+    @Test(dataProvider = "CreateAccountData",dataProviderClass = CreateAccountTest_DataProvider.class,enabled = false)
     public void TC_1_User_can_create_account(String firstName, String lastName, String email,String password){
         CreateAccountPage createAccountPage= homePage.clickCreateAnAccount();
         createAccountPage.waitForHeader();

@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9522c266-44f4-4c62-9126-0fc38606c4e5" name="Changes" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/CreateAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/CreateAccountPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/MyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/MyAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/LoginTest_DataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/LoginTest_DataProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/createAccount/CreateAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/createAccount/CreateAccountTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/login/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/login/LoginTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,29 +26,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2n99MxXjWj1YmY54clVNci2zhbK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TestNG.CreateAccountTests.TC_1_User_can_create_account.executor": "Run",
-    "TestNG.CreateAccountTests.executor": "Run",
-    "TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml.executor": "Run",
-    "TestNG.LoginTests.TC_4_registered_user_can_sign_in.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "E:/Magento eCommerce Tests/Magento eCommerce Tests/src/main/java/org/example/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TestNG.CreateAccountTests.TC_1_User_can_create_account.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CreateAccountTests.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTests.TC_4_registered_user_can_sign_in.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;E:/Magento eCommerce Tests/Magento eCommerce Tests/src/main/java/org/example/Main.java&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml">
+}</component>
+  <component name="RunManager" selected="TestNG.LoginTests.TC_4_registered_user_can_sign_in">
     <configuration name="CreateAccountTests.TC_1_User_can_create_account" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MagentoECommerce_Tests" />
       <extension name="coverage">
@@ -96,8 +97,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" />
         <item itemvalue="TestNG.LoginTests.TC_4_registered_user_can_sign_in" />
+        <item itemvalue="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" />
         <item itemvalue="TestNG.CreateAccountTests.TC_1_User_can_create_account" />
       </list>
     </recent_temporary>
@@ -134,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728478971193</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="init">
+      <option name="closed" value="true" />
+      <created>1728499857666</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728499857666</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
