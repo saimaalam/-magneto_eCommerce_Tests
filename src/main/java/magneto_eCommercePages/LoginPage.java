@@ -43,10 +43,10 @@ public class LoginPage {
         driver.findElement(passwordField).sendKeys(password);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-    public MyAccountPage clickLoginButton(){
+    public HomePage clickLoginButton(){
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(signinButton)));
         Actions action= new Actions(driver);
         action.moveToElement(driver.findElement(signinButton)).click().perform();
-        return new MyAccountPage(driver);
+        return new HomePage(driver);
     }
 }

@@ -1,5 +1,9 @@
 package base;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.google.common.io.Files;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import magneto_eCommercePages.HomePage;
@@ -8,10 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +22,19 @@ public class BaseTests {
     protected HomePage homePage;
     private WebDriver driver;
     private TakesScreenshot capture;
+    protected static ExtentReports extent;
+    protected static ExtentSparkReporter spark;
 
+
+   @BeforeSuite
+   public void setupReport(){
+       extent = new ExtentReports();
+       spark = new ExtentSparkReporter("index.html");
+       spark.config().setTheme(Theme.DARK);
+       spark.config().setDocumentTitle("Magneto eCommerce Test Results");
+       spark.config().setReportName("TestReports");
+       extent.attachReporter(spark);
+   }
     @BeforeClass
     public void setDriver() {
         WebDriverManager.chromedriver().setup();
@@ -52,10 +65,13 @@ public class BaseTests {
 
     @BeforeMethod
     public void navigateToUrl() {
-        driver.get("https://magento.softwaretestingboard.com");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-        driver.manage().window().maximize();
-        homePage = new HomePage(driver);
+       ExtentTest test = extent.createTest("navigateToUrl");
+       test.pass("Navigate to the homepage");
+       driver.get("https://magento.softwaretestingboard.com");
+       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+       test.pass("Maximize the window");
+       driver.manage().window().maximize();
+       homePage = new HomePage(driver);
 
     }
     @AfterMethod
@@ -78,4 +94,11 @@ public class BaseTests {
     public void quitBrowser() {
         driver.quit();
     }
+    @AfterSuite
+    public void tearDownReport() {
+        if (extent != null) {
+            extent.flush();
+        }
+    }
 }
+

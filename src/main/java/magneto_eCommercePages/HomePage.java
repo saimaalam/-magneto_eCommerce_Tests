@@ -2,6 +2,7 @@ package magneto_eCommercePages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,7 +14,7 @@ public class HomePage {
     private By signinLink= By.xpath("//a[@class='action skip contentarea']/following-sibling::ul/li[@class='authorization-link']/a");
     private By customerMenu=By.xpath("//a[@class='action skip contentarea']/following::ul[1]/li[@class='customer-welcome']//button");
     private By myAccountLink=By.xpath("//a[@class='action skip contentarea']/following::ul[1]/li[2]/div/ul/li/a[text()='My Account']");
-
+    private By customerName= By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[1]/span");
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -31,7 +32,7 @@ public class HomePage {
     }
 
     public boolean isSigninLinklPresent(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(signinLink)));
         boolean result = driver.findElement(signinLink).isDisplayed();
         return result;
@@ -48,5 +49,13 @@ public class HomePage {
         driver.findElement(myAccountLink).click();
         return new MyAccountPage(driver);
     }
+    public String getCustomerName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(customerName)));
+        return driver.findElement(customerName).getText();
+    }
 
+    public WebElement getSignInLink(){
+       return driver.findElement(signinLink);
+    }
 }
