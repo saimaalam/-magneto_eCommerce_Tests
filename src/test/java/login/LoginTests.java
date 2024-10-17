@@ -1,17 +1,15 @@
 package login;
 
 import base.BaseTests;
-import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import magneto_eCommercePages.LoginPage;
-import magneto_eCommercePages.MyAccountPage;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utils.LoginTest_DataProvider;
 
 public class LoginTests extends BaseTests {
-    @Test(dataProvider = "LoginDatafromConfiguration",dataProviderClass = LoginTest_DataProvider.class)
+    @Test(dataProvider = "LoginDatafromConfiguration",dataProviderClass = LoginTest_DataProvider.class,groups = "login")
     public void TC_4_registered_user_can_sign_in(String email,String password,String fname, String lname){
         ExtentTest test = extent.createTest("Verify that registered user can Sign in").assignAuthor("Saima").assignCategory("Smoke").assignDevice("Chrome");
         try {

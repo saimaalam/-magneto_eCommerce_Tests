@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9522c266-44f4-4c62-9126-0fc38606c4e5" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/TC_4_registered_user_can_sign_in.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/TC_4_registered_user_can_sign_in.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/MyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/MyAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/TestDataStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/TestDataStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/login/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/login/LoginTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +28,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -43,17 +44,20 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.CreateAccountTests.TC_1_User_can_create_account.executor": "Run",
     "TestNG.CreateAccountTests.executor": "Run",
-    "TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml.executor": "Run",
+    "TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml.executor": "Debug",
     "TestNG.LoginTests.TC_4_registered_user_can_sign_in.executor": "Run",
     "TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book.executor": "Run",
+    "TestNG.MyAccountTests.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "E:/Magento eCommerce Tests/Magento eCommerce Tests/src/main/java/org/example/Main.java"
+    "onboarding.tips.debug.path": "E:/Magento eCommerce Tests/Magento eCommerce Tests/src/main/java/org/example/Main.java",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml">
+  <component name="RunManager" selected="TestNG.MyAccountTests">
     <configuration name="CreateAccountTests.TC_1_User_can_create_account" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MagentoECommerce_Tests" />
       <extension name="coverage">
@@ -100,6 +104,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyAccountTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MagentoECommerce_Tests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="myAccount.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="myAccount" />
+      <option name="MAIN_CLASS_NAME" value="myAccount.MyAccountTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyAccountTests.TC_6_Add_new_address_in_address_book" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MagentoECommerce_Tests" />
       <extension name="coverage">
@@ -120,6 +141,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.MyAccountTests" />
         <item itemvalue="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" />
         <item itemvalue="TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book" />
         <item itemvalue="TestNG.LoginTests.TC_4_registered_user_can_sign_in" />
@@ -175,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728571059378</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="init">
+      <option name="closed" value="true" />
+      <created>1728666577851</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728666577851</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -186,14 +216,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/login/LoginTests.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/login/LoginTests.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="5" />
+          <line>13</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
