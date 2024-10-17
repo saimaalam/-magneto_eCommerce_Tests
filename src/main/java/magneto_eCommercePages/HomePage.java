@@ -43,11 +43,10 @@ public class HomePage {
         driver.findElement(customerMenu).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
-    public MyAccountPage clickMyAccountLink(){
+    public void clickMyAccountLink(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.elementToBeClickable(myAccountLink));
         driver.findElement(myAccountLink).click();
-        return new MyAccountPage(driver);
     }
     public String getCustomerName(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));

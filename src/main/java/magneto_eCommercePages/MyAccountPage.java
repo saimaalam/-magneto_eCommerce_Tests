@@ -1,15 +1,13 @@
 package magneto_eCommercePages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class MyAccountPage {
     private WebDriver driver;
@@ -69,15 +67,25 @@ public class MyAccountPage {
         ((JavascriptExecutor) driver).executeScript(script, element);
     }
     public void clickAddressBookLink()
-    {
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(addressBookLink)));
-        driver.findElement(addressBookLink).click();
-        if(driver.findElement(addNewAddressButton).isDisplayed()){
-            Actions action = new Actions(driver);
-            action.moveToElement(driver.findElement(addNewAddressButton));
-            driver.findElement(addNewAddressButton).click();
+        {
+            wait.until(ExpectedConditions.visibilityOf(driver.findElement(addressBookLink)));
+            driver.findElement(addressBookLink).click();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+            String script = "window.scrollTo(0, document.body.scrollHeight)";
+            ((JavascriptExecutor) driver).executeScript(script);
+            List<WebElement> addressButton = driver.findElements(addNewAddressButton);
+            if (!addressButton.isEmpty()) {
+                System.out.println("default address is present");
+                Actions action = new Actions(driver);
+                action.moveToElement(driver.findElement(addNewAddressButton));
+                driver.findElement(addNewAddressButton).click();
+                wait.until(ExpectedConditions.visibilityOf(driver.findElement(phoneNumberField)));
+                scrollToElement(driver.findElement(phoneNumberField));
+            } else {
+                System.out.println("No default address found. Entering new address details.");
+                scrollToElement(driver.findElement(phoneNumberField));
+            }
         }
-    }
     public void setPhoneNumber(String phone)
     {
         wait.until(ExpectedConditions.presenceOfElementLocated(phoneNumberField));

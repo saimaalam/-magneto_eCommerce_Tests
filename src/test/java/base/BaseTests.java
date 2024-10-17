@@ -9,6 +9,7 @@ import com.google.common.io.Files;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import magneto_eCommercePages.HomePage;
 import magneto_eCommercePages.LoginPage;
+import magneto_eCommercePages.MyAccountPage;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -40,7 +41,7 @@ public class BaseTests {
        extent.attachReporter(spark);
    }
     @BeforeClass
-    public void setDriver() {
+    public void setUrl() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         /*switch (browserName){
@@ -65,18 +66,13 @@ public class BaseTests {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
     }*/
-    }
-
-    @BeforeMethod
-    public void navigateToUrl() {
-       ExtentTest test = extent.createTest("navigateToUrl");
-       test.pass("Navigate to the homepage");
-       driver.get("https://magento.softwaretestingboard.com");
-       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-       test.pass("Maximize the window");
-       driver.manage().window().maximize();
-       homePage = new HomePage(driver);
-
+        ExtentTest test = extent.createTest("navigateToUrl");
+        test.pass("Navigate to the homepage");
+        driver.get("https://magento.softwaretestingboard.com");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+        test.pass("Maximize the window");
+        driver.manage().window().maximize();
+        homePage = new HomePage(driver);
     }
     @AfterMethod
     public void takeScreenshot(ITestResult result) {
@@ -104,11 +100,14 @@ public class BaseTests {
             extent.flush();
         }
     }
-    protected void loginUser(String email, String password) {
+    protected MyAccountPage loginUser(String email, String password) {
         LoginPage loginPage = homePage.clickSigninLink();
         loginPage.setEmailField(email);
         loginPage.setPasswordField(password);
-        loginPage.clickLoginButton();
+        HomePage home= loginPage.clickLoginButton();
+        home.clickCustomerMenu();
+        home.clickMyAccountLink();
+        return new MyAccountPage(driver);
     }
 }
 
