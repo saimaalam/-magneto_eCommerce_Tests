@@ -71,8 +71,6 @@ public class MyAccountPage {
             wait.until(ExpectedConditions.visibilityOf(driver.findElement(addressBookLink)));
             driver.findElement(addressBookLink).click();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-            String script = "window.scrollTo(0, document.body.scrollHeight)";
-            ((JavascriptExecutor) driver).executeScript(script);
             List<WebElement> addressButton = driver.findElements(addNewAddressButton);
             if (!addressButton.isEmpty()) {
                 System.out.println("default address is present");
@@ -83,13 +81,13 @@ public class MyAccountPage {
                 scrollToElement(driver.findElement(phoneNumberField));
             } else {
                 System.out.println("No default address found. Entering new address details.");
-                scrollToElement(driver.findElement(phoneNumberField));
             }
         }
     public void setPhoneNumber(String phone)
     {
         wait.until(ExpectedConditions.presenceOfElementLocated(phoneNumberField));
-        scrollToElement(driver.findElement(phoneNumberField));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(phoneNumberField)).perform();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(phoneNumberField).sendKeys(phone);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -98,28 +96,33 @@ public class MyAccountPage {
     public void setStreetAddress1(String street1)
     {
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(streetAddress1Field)));
+        scrollToElement(driver.findElement(streetAddress1Field));
         driver.findElement(streetAddress1Field).sendKeys(street1);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
     public void setCity(String city)
     {
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(cityField)));
-        driver.findElement(streetAddress1Field).sendKeys(city);
+        scrollToElement(driver.findElement(cityField));
+        driver.findElement(cityField).sendKeys(city);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
     public void setZipCode(String zip)
     {
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(zipField)));
-        driver.findElement(streetAddress1Field).sendKeys(zip);
+        scrollToElement(driver.findElement(zipField));
+        driver.findElement(zipField).sendKeys(zip);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
     public void selectCountry(String country){
         scrollToElement(driver.findElement(countryDropdown));
         Select dropdown=  new Select(driver.findElement(countryDropdown));
         dropdown.selectByVisibleText(country);
+        System.out.println(dropdown.getFirstSelectedOption().getText());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
     public void selectState(String state){
+        scrollToElement(driver.findElement(stateDropdown));
         Select dropdown=  new Select(driver.findElement(stateDropdown));
         dropdown.selectByVisibleText(state);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -128,6 +131,7 @@ public class MyAccountPage {
     {
         scrollToElement(driver.findElement(saveAddressButton));
         driver.findElement(saveAddressButton).click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
     }
 
 

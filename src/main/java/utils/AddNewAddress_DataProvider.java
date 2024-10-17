@@ -6,8 +6,8 @@ import org.testng.annotations.DataProvider;
 public class AddNewAddress_DataProvider {
     Faker faker = new Faker();
     public String phoneNumber = faker.phoneNumber().cellPhone();
-    public  String streetAddress1=faker.harryPotter().location();
-    public  String city =faker.address().cityName();
+    public  String streetAddress1=faker.address().streetAddress();
+    public  String city =faker.address().city();
     public  String zipCode= faker.address().zipCode();
     public  String state = "Quebec";
     public  String country= "Canada";
