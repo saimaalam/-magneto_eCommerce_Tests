@@ -18,8 +18,10 @@ import utils.TestDataStorage;
 public class MyAccountTests extends BaseTests {
 
     private MyAccountPage myAccountPage;
-    @Test(dataProvider = "LoginDatafromConfiguration",dataProviderClass = LoginTest_DataProvider.class)
+    @Test(dataProvider = "LoginDatafromRegistration",dataProviderClass = LoginTest_DataProvider.class)
     public void loginBeforeTest(String email, String password, String fname, String lname) {
+        ExtentTest test = extent.createTest("loginBeforeTest");
+        test.log(Status.INFO, "login with "+"Email: "+email );
         myAccountPage = loginUser(email, password);
     }
 

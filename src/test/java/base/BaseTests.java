@@ -66,11 +66,8 @@ public class BaseTests {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
     }*/
-        ExtentTest test = extent.createTest("navigateToUrl");
-        test.pass("Navigate to the homepage");
         driver.get("https://magento.softwaretestingboard.com");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-        test.pass("Maximize the window");
         driver.manage().window().maximize();
         homePage = new HomePage(driver);
     }

@@ -9,7 +9,7 @@ import org.testng.asserts.SoftAssert;
 import utils.LoginTest_DataProvider;
 
 public class LoginTests extends BaseTests {
-    @Test(dataProvider = "LoginDatafromConfiguration",dataProviderClass = LoginTest_DataProvider.class,groups = "login")
+    @Test(dataProvider = "LoginDatafromRegistration",dataProviderClass = LoginTest_DataProvider.class)
     public void TC_4_registered_user_can_sign_in(String email,String password,String fname, String lname){
         ExtentTest test = extent.createTest("Verify that registered user can Sign in").assignAuthor("Saima").assignCategory("Smoke").assignDevice("Chrome");
         try {
@@ -47,7 +47,7 @@ public class LoginTests extends BaseTests {
             // Step 6: Verify sign in link not showing
             test.log(Status.INFO, "sign in link not showing");
             if (homePage.getSignInLink().isDisplayed()) {
-                test.fail("login not successful");
+                test.fail("login is not successful");
             } else {
                 test.pass("Login successful");
             }

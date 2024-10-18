@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">TestReports</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Oct 17, 2024 11:59:05 PM</span></a>
+<a href="#"><span class="badge badge-primary">Oct 18, 2024 08:32:36 PM</span></a>
 </li>
 </ul>
 </div>
@@ -82,6 +82,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -108,13 +109,13 @@
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
         <li class="test-item"  status="pass" test-id="1"
-          author=""
-          tag=""
-          device="">
+          author="Saima"
+          tag="Smoke"
+          device="Chrome">
           <div class="test-detail">
-            <p class="name">navigateToUrl</p>
+            <p class="name">Verify that a new user can register</p>
             <p class="text-sm">
-              <span>11:59:12 PM</span> / <span>00:00:14:626</span>
+              <span>8:32:53 PM</span> / <span>00:00:02:970</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -122,32 +123,77 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">navigateToUrl</h5>
-<span class='badge badge-success'>10.17.2024 11:59:12 PM</span>
-<span class='badge badge-danger'>10.17.2024 11:59:27 PM</span>
-<span class='badge badge-default'>00:00:14:626</span>
+<h5 class="test-status text-pass">Verify that a new user can register</h5>
+<span class='badge badge-success'>10.18.2024 8:32:53 PM</span>
+<span class='badge badge-danger'>10.18.2024 8:32:56 PM</span>
+<span class='badge badge-default'>00:00:02:970</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Saima</span>
+<span class="badge badge-pill badge-default">Smoke</span>
+<span class="badge badge-pill badge-default">Chrome</span></div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:59:12 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:32:53 PM</td>
         <td>
-          Navigate to the homepage
+          Click on 'Create an Account' link
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:59:27 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:32:55 PM</td>
         <td>
-          Maximize the window
+          Enter First Name Shirl
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:32:55 PM</td>
+        <td>
+          Enter Last Name Gutkowski
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:32:55 PM</td>
+        <td>
+          Enter Email address shirlgutkowski@yahoo.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:32:55 PM</td>
+        <td>
+          Enter Password
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:32:55 PM</td>
+        <td>
+          Enter Confirm PasswordAbcdefgh
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:32:55 PM</td>
+        <td>
+          Click the Create an Account button
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:32:56 PM</td>
+        <td>
+          Validate Registration success message is showing
         </td>
       </tr>
   </tbody>
@@ -155,25 +201,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="2"
+        <li class="test-item"  status="fail" test-id="2"
           author="Saima"
           tag="Smoke"
           device="Chrome">
           <div class="test-detail">
             <p class="name">Verify that registered user can Sign in</p>
             <p class="text-sm">
-              <span>11:59:27 PM</span> / <span>00:00:05:530</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:33:21 PM</span> / <span>00:00:06:702</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Verify that registered user can Sign in</h5>
-<span class='badge badge-success'>10.17.2024 11:59:27 PM</span>
-<span class='badge badge-danger'>10.17.2024 11:59:33 PM</span>
-<span class='badge badge-default'>00:00:05:530</span>
+<h5 class="test-status text-fail">Verify that registered user can Sign in</h5>
+<span class='badge badge-success'>10.18.2024 8:33:21 PM</span>
+<span class='badge badge-danger'>10.18.2024 8:33:27 PM</span>
+<span class='badge badge-default'>00:00:06:702</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -189,231 +235,79 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:59:27 PM</td>
+        <td>8:33:21 PM</td>
         <td>
           Clicking on Sign-in link
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:59:29 PM</td>
+        <td>8:33:24 PM</td>
         <td>
           Sign in link clicked
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:59:29 PM</td>
+        <td>8:33:24 PM</td>
         <td>
           Waiting for page header to load
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:59:29 PM</td>
+        <td>8:33:24 PM</td>
         <td>
           Verifying login page header
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:59:29 PM</td>
+        <td>8:33:24 PM</td>
         <td>
           Login page header is displayed correctly.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:59:29 PM</td>
+        <td>8:33:24 PM</td>
         <td>
-          Entering email: AmosDietrich@gmail.com
+          Entering email: shirlgutkowski@yahoo.com
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:59:30 PM</td>
+        <td>8:33:25 PM</td>
         <td>
           Entering password.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:59:30 PM</td>
+        <td>8:33:25 PM</td>
         <td>
           Clicking login button
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:59:33 PM</td>
+        <td>8:33:27 PM</td>
         <td>
            login button clicked.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:59:33 PM</td>
+        <td>8:33:27 PM</td>
         <td>
           sign in link not showing
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:59:33 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:33:27 PM</td>
         <td>
-          Login successful
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="3"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">navigateToUrl</p>
-            <p class="text-sm">
-              <span>11:59:36 PM</span> / <span>00:00:15:675</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">navigateToUrl</h5>
-<span class='badge badge-success'>10.17.2024 11:59:36 PM</span>
-<span class='badge badge-danger'>10.17.2024 11:59:51 PM</span>
-<span class='badge badge-default'>00:00:15:675</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:59:36 PM</td>
-        <td>
-          Navigate to the homepage
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:59:51 PM</td>
-        <td>
-          Maximize the window
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="4"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Verify that user can add new address in address book</p>
-            <p class="text-sm">
-              <span>12:00:06 AM</span> / <span>00:00:11:282</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Verify that user can add new address in address book</h5>
-<span class='badge badge-success'>10.18.2024 12:00:06 AM</span>
-<span class='badge badge-danger'>10.18.2024 12:00:17 AM</span>
-<span class='badge badge-default'>00:00:11:282</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>12:00:06 AM</td>
-        <td>
-          Click on the 'Address Book' link 
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>12:00:12 AM</td>
-        <td>
-          Enter Phone Number
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>12:00:13 AM</td>
-        <td>
-          Enter First Street Address
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>12:00:13 AM</td>
-        <td>
-          Enter City
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>12:00:13 AM</td>
-        <td>
-          Enter Zip/Postal Code
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>12:00:13 AM</td>
-        <td>
-          Enter Country
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>12:00:14 AM</td>
-        <td>
-          Enter State/Province
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>12:00:15 AM</td>
-        <td>
-          Click on 'Save Address' Button 
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>12:00:17 AM</td>
-        <td>
-          Validating the Success message: 'You saved the address.'
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>12:00:17 AM</td>
-        <td>
-          Address is added Successfully. Success message is showing correctly
+          login not successful
         </td>
       </tr>
   </tbody>
@@ -442,14 +336,16 @@
 <div class="test-detail">
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>1</span>
 </span>
 <p class="name">Smoke</p>
-<p class="duration text-sm">1 tests</p>
+<p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
 <h4>Smoke</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -462,7 +358,14 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>23:59:27 PM</td>
+<td>20:32:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>Verify that a new user can register</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>20:33:21 PM</td>
 <td>
 <a href="#" class="linked" test-id='2' id='2'>Verify that registered user can Sign in</a>
 </td>
@@ -491,14 +394,16 @@
 <div class="test-detail">
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>1</span>
 </span>
 <p class="name">Chrome</p>
-<p class="duration text-sm">1 tests</p>
+<p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
 <h4>Chrome</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -511,7 +416,14 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>23:59:27 PM</td>
+<td>20:32:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>Verify that a new user can register</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>20:33:21 PM</td>
 <td>
 <a href="#" class="linked" test-id='2' id='2'>Verify that registered user can Sign in</a>
 </td>
@@ -540,14 +452,16 @@
 <div class="test-detail">
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>1</span>
 </span>
 <p class="name">Saima</p>
-<p class="duration text-sm">1 tests</p>
+<p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
 <h4>Saima</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -560,7 +474,14 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>23:59:27 PM</td>
+<td>20:32:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>Verify that a new user can register</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>20:33:21 PM</td>
 <td>
 <a href="#" class="linked" test-id='2' id='2'>Verify that registered user can Sign in</a>
 </td>
@@ -582,25 +503,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Oct 17, 2024 11:59:05 PM</h3>
+<h3>Oct 18, 2024 08:32:36 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Oct 18, 2024 12:00:20 AM</h3>
+<h3>Oct 18, 2024 08:34:03 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>4</h3>
+<h3>1</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -616,12 +537,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>4</b> tests passed
+<div><small data-tooltip='50%'>
+<b>1</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='50%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -639,10 +560,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='36%'><b>9</b> events passed</small></div>
+<div><small data-tooltip='15%'><b>3</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>16</b> others
+<small data-tooltip='5%'><b>1</b> events failed,
+<b data-tooltip='%'>15</b> others
 </small>
 </div>
 </div>
@@ -658,7 +579,7 @@
 </div></div>
 <script>
 var timeline = {
-"navigateToUrl":14.626,"Verify that registered user can Sign in":5.53,"navigateToUrl":15.675,"Verify that user can add new address in address book":11.282
+"Verify that a new user can register":2.97,"Verify that registered user can Sign in":6.702
 };
 </script>
 <div class="row">
@@ -671,10 +592,10 @@ var timeline = {
 <tr>
 <td>Saima</td>
 <td>1</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>50%</td>
 </tr>
 </tbody>
 </table></div>
@@ -688,10 +609,10 @@ var timeline = {
 <tr>
 <td>Smoke</td>
 <td>1</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>50%</td>
 </tr>
 </tbody>
 </table></div>
@@ -706,10 +627,10 @@ var timeline = {
 <tr>
 <td>Chrome</td>
 <td>1</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>50%</td>
 </tr>
 </tbody>
 </table></div>
@@ -720,8 +641,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 4,
-failParent: 0,
+passParent: 1,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -737,11 +658,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 9,
-failEvents: 0,
+passEvents: 3,
+failEvents: 1,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 16
+infoEvents: 15
 };
 </script>        </div>
       </div>

@@ -2,6 +2,7 @@
 <suite name="Magento eCommerce Suite">
     <test name="My Account Tests">
         <classes>
+            <class name="createAccount.CreateAccountTests"></class>
             <class name="login.LoginTests"></class>
             <class name="myAccount.MyAccountTests"/>
         </classes>
