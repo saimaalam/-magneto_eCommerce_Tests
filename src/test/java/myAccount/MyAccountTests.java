@@ -18,16 +18,15 @@ import utils.TestDataStorage;
 public class MyAccountTests extends BaseTests {
 
     private MyAccountPage myAccountPage;
-    @Test(dataProvider = "LoginDatafromRegistration",dataProviderClass = LoginTest_DataProvider.class)
+    @Test(dataProvider = "LoginDatafromConfiguration",dataProviderClass = LoginTest_DataProvider.class,description = "login before a test execution")
     public void loginBeforeTest(String email, String password, String fname, String lname) {
-        ExtentTest test = extent.createTest("loginBeforeTest");
         test.log(Status.INFO, "login with "+"Email: "+email );
         myAccountPage = loginUser(email, password);
     }
 
-    @Test(dataProvider = "AddNewAddressData",dataProviderClass = AddNewAddress_DataProvider.class,dependsOnMethods ={"loginBeforeTest"} )
+    @Test(description = "Verify that user can add new address in address book",dataProvider = "AddNewAddressData",dataProviderClass = AddNewAddress_DataProvider.class,dependsOnMethods ={"loginBeforeTest"} )
     public void TC_6_Add_new_address_in_address_book(String phoneNumber,String streetAddress1,String city,String zipCode,String state,String country) {
-        ExtentTest test = extent.createTest("Verify that user can add new address in address book");
+        //ExtentTest test = extent.createTest("Verify that user can add new address in address book");
         test.log(Status.INFO, "Click on the 'Address Book' link ");
         myAccountPage.clickAddressBookLink();
         test.log(Status.INFO,"Enter Phone Number");

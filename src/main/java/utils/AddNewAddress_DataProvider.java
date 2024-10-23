@@ -21,7 +21,8 @@ public class AddNewAddress_DataProvider {
         TestDataStorage.addedCountry=country;
 
         return new Object[][] {
-                {phoneNumber,streetAddress1,city,zipCode,state,country},
+                {phoneNumber,streetAddress1,city,zipCode,state,country}
+
         };
     }
 }
