@@ -54,7 +54,4 @@ public class HomePage {
         return driver.findElement(customerName).getText();
     }
 
-    public WebElement getSignInLink(){
-       return driver.findElement(signinLink);
-    }
 }

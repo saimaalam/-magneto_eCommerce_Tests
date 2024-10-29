@@ -20,7 +20,7 @@ public class LoginTest_DataProvider {
         // Access the data stored in TestDataStorage clas
 
         return new Object[][]{
-                {"AmosDietrich#gmail.com","Abcdefgh!","Amos","Dietrich"},
+                {"AmosDietrich@gmail.com","Abcdefgh!","Amos","Dietrich"},
         };
     }
 }

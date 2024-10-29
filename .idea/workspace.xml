@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9522c266-44f4-4c62-9126-0fc38606c4e5" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/config.propertise" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/TC_1_User_can_create_account.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/AddNewAddress_DataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/AddNewAddress_DataProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/CreateAccountTest_DataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/CreateAccountTest_DataProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/LoginTest_DataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/LoginTest_DataProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/createAccount/CreateAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/createAccount/CreateAccountTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/login/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/login/LoginTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,5 +236,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/base/BaseTests.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

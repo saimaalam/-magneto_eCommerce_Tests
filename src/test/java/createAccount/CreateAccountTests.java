@@ -10,9 +10,8 @@ import org.testng.asserts.SoftAssert;
 import utils.CreateAccountTest_DataProvider;
 
 public class CreateAccountTests extends BaseTests {
-    @Test(dataProvider = "CreateAccountData",dataProviderClass = CreateAccountTest_DataProvider.class)
+    @Test(description = "Verify that a new user can register",dataProvider = "CreateAccountData",dataProviderClass = CreateAccountTest_DataProvider.class)
     public void TC_1_User_can_create_account(String firstName, String lastName, String email,String password){
-        ExtentTest test = extent.createTest("Verify that a new user can register").assignAuthor("Saima").assignCategory("Smoke").assignDevice("Chrome");
         test.log(Status.INFO,"Click on 'Create an Account' link");
         CreateAccountPage createAccountPage= homePage.clickCreateAnAccount();
         createAccountPage.waitForHeader();

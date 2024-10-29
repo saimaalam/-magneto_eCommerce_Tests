@@ -2,8 +2,6 @@ package base;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.model.Log;
-import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.google.common.io.Files;
@@ -15,27 +13,47 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import org.testng.asserts.SoftAssert;
-import utils.LoginTest_DataProvider;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Method;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
+import java.util.Properties;
 
 public class BaseTests {
-    protected HomePage homePage;
-    private WebDriver driver;
-    private TakesScreenshot capture;
     protected static ExtentReports extent;
     protected static ExtentSparkReporter spark;
+    protected HomePage homePage;
     protected ExtentTest test;
+    private WebDriver driver;
+    private TakesScreenshot capture;
+    private String browser;
 
+    public String getBrowserName() {
+        Properties properties = new Properties();
+        String projectPath = System.getProperty("user.dir");
+        try {
+            InputStream input = new FileInputStream(projectPath + "/src/main/java/config/config.propertise");
+            properties.load(input);
+            browser = properties.getProperty("browser");
+            System.out.println(browser);
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        return browser;
+    }
 
     @BeforeSuite
     public void setupReport() {
@@ -50,30 +68,28 @@ public class BaseTests {
 
     @BeforeClass
     public void setUrl() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        /*switch (browserName){
-        case "chrome":
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-
-            break;
-        case "firefox":
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-            break;
-        case "edge":
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
-            break;
-        case "ie":
-            WebDriverManager.iedriver().setup();
-            driver = new InternetExplorerDriver();
-            break;
-        default:
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-    }*/
+        String browserName = getBrowserName().toLowerCase();
+        switch (browserName) {
+            case "chrome":
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+                break;
+            case "firefox":
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+                break;
+            case "edge":
+                WebDriverManager.edgedriver().setup();
+                driver = new EdgeDriver();
+                break;
+            case "ie":
+                WebDriverManager.iedriver().setup();
+                driver = new InternetExplorerDriver();
+                break;
+            default:
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+        }
         driver.get("https://magento.softwaretestingboard.com");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
         driver.manage().window().maximize();
@@ -83,7 +99,7 @@ public class BaseTests {
     @BeforeMethod
     public void setTestName(Method method) {
 
-        test = extent.createTest(method.getAnnotation(Test.class).description());
+        test = extent.createTest(method.getAnnotation(Test.class).description()).assignDevice(browser);
     }
 
     @AfterMethod
