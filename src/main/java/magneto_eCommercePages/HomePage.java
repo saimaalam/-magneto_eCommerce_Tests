@@ -1,6 +1,7 @@
 package magneto_eCommercePages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -52,6 +53,24 @@ public class HomePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(customerName)));
         return driver.findElement(customerName).getText();
+    }
+    public boolean isHomepageUrlShowing(){
+        boolean result=false;
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+            wait.until(ExpectedConditions.urlToBe("https://magento.softwaretestingboard.com/"));
+            if(driver.getCurrentUrl().equals("https://magento.softwaretestingboard.com/")){
+                 result= true;
+            }
+
+        }
+        catch (TimeoutException e){
+
+            System.out.println(e.getMessage());
+             result=false;
+        }
+        return result;
+
     }
 
 }

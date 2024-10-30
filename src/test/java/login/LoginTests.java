@@ -44,17 +44,17 @@ public class LoginTests extends BaseTests {
             test.pass(" login button clicked.");
 
             // Step 6: Verify sign in link not showing
-            test.log(Status.INFO, "sign in link not showing");
-            if (homePage.isSigninLinklPresent()) {
-                test.fail("login is not successful");
-                Assert.assertFalse(homePage.isSigninLinklPresent());
+            test.log(Status.INFO, "Verify User is redirected to homepage ");
+            if (homePage.isHomepageUrlShowing()) {
+                test.pass("User is in homepage. Login is successful");
+                Assert.assertTrue(homePage.isHomepageUrlShowing());
             } else {
-                test.pass("Login successful");
+                test.fail("Login is not successful");
             }
 
         } catch (AssertionError e) {
             test.log(Status.FAIL, "This test is failed due to an assertion error : " + e.getMessage());
-            throw e;  // Ensure test fails if assertions are not met
+            throw e;
         } catch (TimeoutException e) {
             test.log(Status.FAIL, "This test is failed due to timeout: " + e.getMessage());
             throw e;

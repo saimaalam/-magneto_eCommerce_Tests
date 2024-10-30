@@ -1,6 +1,7 @@
 package magneto_eCommercePages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -45,8 +46,8 @@ public class LoginPage {
     }
     public HomePage clickLoginButton(){
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(signinButton)));
-        Actions action= new Actions(driver);
-        action.moveToElement(driver.findElement(signinButton)).click().perform();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(signinButton));
+        driver.findElement(signinButton).click();
         return new HomePage(driver);
     }
 }
