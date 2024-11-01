@@ -117,13 +117,14 @@ public class MyAccountPage {
         scrollToElement(driver.findElement(countryDropdown));
         Select dropdown=  new Select(driver.findElement(countryDropdown));
         dropdown.selectByVisibleText(country);
-        System.out.println(dropdown.getFirstSelectedOption().getText());
+        System.out.println("Country: "+dropdown.getFirstSelectedOption().getText());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
     public void selectState(String state){
         scrollToElement(driver.findElement(stateDropdown));
         Select dropdown=  new Select(driver.findElement(stateDropdown));
         dropdown.selectByVisibleText(state);
+        System.out.println("State: "+dropdown.getFirstSelectedOption().getText());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
     public void clickSaveAddressButton()
