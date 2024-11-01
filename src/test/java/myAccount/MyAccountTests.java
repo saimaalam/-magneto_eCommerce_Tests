@@ -22,9 +22,15 @@ public class MyAccountTests extends BaseTests {
     private MyAccountPage myAccountPage;
     @Test(dataProvider = "LoginDatafromConfiguration",dataProviderClass = LoginTest_DataProvider.class,description = "login before a test execution")
     public void loginBeforeTest(String email, String password, String fname, String lname) {
-        test.log(Status.INFO, "login with "+"Email: "+email );
-        myAccountPage = loginUser(email, password);
-        test.pass("User have logged in");
+        try {
+            test.log(Status.INFO, "login with "+"Email: "+email );
+            myAccountPage = loginUser(email, password);
+            test.pass("User have logged in");
+        }
+        catch (Exception e){
+            test.fail("User can not login due to " +e.getMessage().split("\n")[0]);
+        }
+
     }
 
     @Test(description = "Verify that user can add new address in the address book",dataProvider = "AddNewAddressData",dataProviderClass = AddNewAddress_DataProvider.class,dependsOnMethods ={"loginBeforeTest"} )
