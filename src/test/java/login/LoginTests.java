@@ -12,55 +12,73 @@ import utils.LoginTest_DataProvider;
 public class LoginTests extends BaseTests {
     @Test(description = "Validate user can login with valid credentials", dataProvider = "LoginDatafromConfiguration", dataProviderClass = LoginTest_DataProvider.class)
     public void TC_4_registered_user_can_sign_in(String email, String password, String fname, String lname) {
+        String stepDescription="";
         try {
-            test.log(Status.INFO, "Clicking on Sign-in link");
+            stepDescription="Step1: Click on Sign-in link";
+            test.log(Status.INFO, stepDescription);
             LoginPage loginPage = homePage.clickSigninLink();
-            test.pass("Sign in link clicked");
-            test.log(Status.INFO, "Waiting for page header to load");
+            test.pass("Step1: Passed. Sign in link clicked");
+
+            stepDescription="Step2: Wait for page header to load";
+            test.log(Status.INFO, stepDescription);
             loginPage.waitForHeader();
+            test.pass("Step2: Passed. Page header is loaded");
 
             // Step 2: Verify the login page header
-            test.log(Status.INFO, "Verifying login page header is showing");
+            stepDescription="Step3: Verify login page header is showing";
+            test.log(Status.INFO, stepDescription);
             String header = loginPage.getHearder();
             if (header.equals("Customer Login")) {
-                test.pass("Login page header is showing correctly." +
+                test.pass("Step3: Passed. Login page header is showing correctly." +
                         "Expected : Customer Login" + "Actual : " + header);
             } else {
-                test.fail("Header is not showing correctly. " +
+                test.fail("Step3: Failed. Header is not showing correctly. " +
                         "Expected : Customer Login " + "Actual : " + header);
             }
 
             // Step 3: Set email field
-            test.log(Status.INFO, "Entering email: " + email);
+            stepDescription="Step: 4 Enter email: " + email;
+            test.log(Status.INFO, stepDescription);
             loginPage.setEmailField(email);
+            test.pass("Step4: Passed. Email is entered");
 
             // Step 4: Set password field
-            test.log(Status.INFO, "Entering password.");
+            stepDescription="Step4: Enter Password";
+            test.log(Status.INFO, stepDescription);
             loginPage.setPasswordField(password);
+            test.pass("Step5: Passed. Password is entered");
 
-            // Step 5: Click login button and verify account page
-            test.log(Status.INFO, "Clicking login button");
+            // Step 5: Click login button
+            stepDescription="Step6: Click on login button";
+            test.log(Status.INFO, stepDescription);
             loginPage.clickLoginButton();
-            test.pass(" login button clicked.");
+            test.pass("Step6: Passed. login button is clicked.");
 
-            // Step 6: Verify sign in link not showing
-            test.log(Status.INFO, "Verify User is redirected to homepage ");
-            if (homePage.isHomepageUrlShowing()) {
-                test.pass("User is in homepage. Login is successful");
+            // Step 6: Verify home page url is showing
+            stepDescription="Step7: Verify User is redirected to the homepage";
+            test.log(Status.INFO, stepDescription);
+            if(homePage.isHomepageUrlShowing()){
+                test.pass("Step7: Passed. User is redirect to homepage");
+            }
+            else {
+                test.fail("Step7: Failed. User is not redirect to homepage");
                 Assert.assertTrue(homePage.isHomepageUrlShowing());
-            } else {
-                test.fail("Login is not successful");
             }
 
         } catch (AssertionError e) {
-            test.log(Status.FAIL, "This test is failed due to an assertion error : " + e.getMessage());
+            test.log(Status.FAIL, "This test is failed due to an assertion error in "+stepDescription+"  " +e.getMessage());
             throw e;
         } catch (TimeoutException e) {
-            test.log(Status.FAIL, "This test is failed due to timeout: " + e.getMessage());
+            test.log(Status.FAIL, "This test is failed due to timeout in "+stepDescription+"  "  + e.getMessage());
             throw e;
 
         } catch (NoSuchElementException e) {
-            test.log(Status.FAIL, "This test is failed due to element not found: " + e.getMessage());
+            String conciseMessage =" - Element not found: "+e.getMessage().split("\n")[0];
+            test.log(Status.FAIL, "This test is failed due to an element not found in "+stepDescription+"  "  +conciseMessage);
+            throw e;
+        }
+        catch (Exception e){
+            test.log(Status.FAIL,"This test is failed due to an exception in "+stepDescription+"  "  +e.getMessage());
             throw e;
         }
     }

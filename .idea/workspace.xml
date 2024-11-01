@@ -7,9 +7,13 @@
     <list default="true" id="9522c266-44f4-4c62-9126-0fc38606c4e5" name="Changes" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/config/config.propertise" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/config.propertise" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/MyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/MyAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/LoginTest_DataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/LoginTest_DataProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/TestDataStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/TestDataStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/login/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/login/LoginTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +59,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.LoginTests.TC_4_registered_user_can_sign_in">
+  <component name="RunManager" selected="TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book">
     <configuration name="CreateAccountTests.TC_1_User_can_create_account" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MagentoECommerce_Tests" />
       <extension name="coverage">
@@ -139,8 +143,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginTests.TC_4_registered_user_can_sign_in" />
         <item itemvalue="TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book" />
+        <item itemvalue="TestNG.LoginTests.TC_4_registered_user_can_sign_in" />
         <item itemvalue="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" />
         <item itemvalue="TestNG.MyAccountTests" />
         <item itemvalue="TestNG.CreateAccountTests.TC_1_User_can_create_account" />
@@ -235,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730230205547</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="init">
+      <option name="closed" value="true" />
+      <created>1730310195972</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1730310195972</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

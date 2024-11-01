@@ -98,7 +98,6 @@ public class BaseTests {
 
     @BeforeMethod
     public void setTestName(Method method) {
-
         test = extent.createTest(method.getAnnotation(Test.class).description()).assignDevice(browser);
     }
 

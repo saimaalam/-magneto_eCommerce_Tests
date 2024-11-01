@@ -74,8 +74,7 @@ public class MyAccountPage {
             List<WebElement> addressButton = driver.findElements(addNewAddressButton);
             if (!addressButton.isEmpty()) {
                 System.out.println("default address is present");
-                Actions action = new Actions(driver);
-                action.moveToElement(driver.findElement(addNewAddressButton));
+                scrollToElement(driver.findElement(addNewAddressButton));
                 driver.findElement(addNewAddressButton).click();
                 wait.until(ExpectedConditions.visibilityOf(driver.findElement(phoneNumberField)));
                 scrollToElement(driver.findElement(phoneNumberField));

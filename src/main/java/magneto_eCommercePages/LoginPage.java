@@ -48,6 +48,7 @@ public class LoginPage {
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(signinButton)));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(signinButton));
         driver.findElement(signinButton).click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         return new HomePage(driver);
     }
 }
