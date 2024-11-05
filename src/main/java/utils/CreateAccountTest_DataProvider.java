@@ -12,15 +12,13 @@ public class CreateAccountTest_DataProvider {
 
     @DataProvider(name = "CreateAccountData")
     public Object[][] generateCreateAccountData() {
-        // Store the generated data in the UserDataStorage class
 
         TestDataStorage.registeredFirstName = fname;
         TestDataStorage.registeredLastName = lname;
         TestDataStorage.registeredEmail = email;
         TestDataStorage.registeredPassword = password;
 
-        // Return the data for the registration test
-        return new Object[][] {
+        return new Object[][]{
                 {fname, lname, email, password},
         };
     }

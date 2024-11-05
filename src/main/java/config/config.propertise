@@ -1,10 +1,10 @@
 #Enter Browser name. Available option: chrome,firefox,ie,edge. If you keep it null chrome will be used as default browser.
-browser=chrome
+browser=firefox
 
 #Enter Data provider name for test data.
-#Enter'LoginDatafromRegistration' if you are running CreateAccountTests before LoginTests.This data provider will give the data which has been used to test create a new account.
-#Enter 'LoginDatafromConfiguration' if you are running login test independently and didn't run CreateAccountTests before login. If you select this data provider, you have enter your own login data
-dataProvider=LoginDatafromConfiguration
+#Enter'Registration' if you are running CreateAccountTests before LoginTests.This data provider will give the data which has been used to test create a new account.
+#Enter 'Configuration' if you are running login test independently and didn't run CreateAccountTests before login. If you select this data provider, you have enter your own login data
+dataProvider=Configuration
 
 #Enter data for login test. This data will be used for login if you have used dataProvider='LoginDatafromConfiguration'
 firstname=Amos

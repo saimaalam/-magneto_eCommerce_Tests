@@ -15,15 +15,14 @@ public class MyAccountTests extends BaseTests {
 
     private MyAccountPage myAccountPage;
 
-    @Test(dataProvider = "LoginDatafromRegistration", dataProviderClass = LoginTest_DataProvider.class, description = "login before a test execution")
+    @Test(dataProvider = "LoginDataProvider", dataProviderClass = LoginTest_DataProvider.class, description = "login before a test execution")
     public void loginBeforeTest(String email, String password, String fname, String lname) {
         try {
             test.log(Status.INFO, "login with " + "Email: " + email);
             myAccountPage = loginUser(email, password);
-            if(myAccountPage.getMyAccountpageHeader().equals("My Account")){
+            if (myAccountPage.getMyAccountpageHeader().equals("My Account")) {
                 test.pass("User have logged in");
-            }
-            else {
+            } else {
                 test.fail("Login failed");
             }
         } catch (Exception e) {
@@ -87,10 +86,10 @@ public class MyAccountTests extends BaseTests {
 
 
         } catch (AssertionError e) {
-            test.log(Status.FAIL, "This test is failed due to an assertion error in " + stepDescription + " " + e.getMessage());
+            test.log(Status.FAIL, "This test is failed due to an assertion error in " + stepDescription + " " + e.getMessage().split("\n")[0]);
             throw e;
         } catch (TimeoutException e) {
-            test.log(Status.FAIL, "This test is failed due to timeout: " + e.getMessage());
+            test.log(Status.FAIL, "This test is failed due to timeout in " +stepDescription +" "+ e.getMessage().split("\n")[0]);
             throw e;
 
         } catch (NoSuchElementException e) {
@@ -98,7 +97,7 @@ public class MyAccountTests extends BaseTests {
             test.log(Status.FAIL, "This test is failed due to element not found in " + stepDescription + " " + conciseMessage);
             throw e;
         } catch (Exception e) {
-            test.log(Status.FAIL, "This test is failed due to an exception in " + stepDescription + " " + e.getMessage());
+            test.log(Status.FAIL, "This test is failed due to an exception in " + stepDescription + " " + e.getMessage().split("\n")[0]);
             throw e;
         }
 

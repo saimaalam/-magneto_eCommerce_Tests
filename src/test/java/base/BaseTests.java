@@ -29,12 +29,12 @@ import java.util.Properties;
 public class BaseTests {
     protected static ExtentReports extent;
     protected static ExtentSparkReporter spark;
+    protected static String dataProviderName;
     protected HomePage homePage;
     protected ExtentTest test;
     private WebDriver driver;
     private TakesScreenshot capture;
     private String browser;
-    protected String dataProviderName;
 
     public String getBrowserName() {
         Properties properties = new Properties();
@@ -54,28 +54,6 @@ public class BaseTests {
             throw new RuntimeException(e);
         }
         return browser;
-    }
-    public String getTestDataProverName(){
-        Properties properties = new Properties();
-        String projectPath = System.getProperty("user.dir");
-        try {
-            InputStream input = new FileInputStream(projectPath + "/src/main/java/config/config.propertise");
-            properties.load(input);
-            dataProviderName=properties.getProperty("dataProvider");
-            System.out.println(dataProviderName);
-        }
-        catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-
-        return dataProviderName;
-
     }
 
 
@@ -120,13 +98,9 @@ public class BaseTests {
         homePage = new HomePage(driver);
     }
 
-    public void setTestName(Method method) {
-        test = extent.createTest(method.getAnnotation(Test.class).description()).assignDevice(browser);
-    }
     @BeforeMethod
     public void setTestData(Method method) {
-        setTestName(method);
-        String dataProvider= getTestDataProverName();
+        test = extent.createTest(method.getAnnotation(Test.class).description()).assignDevice(browser);
     }
 
     @AfterMethod
@@ -144,7 +118,6 @@ public class BaseTests {
 
 
     }
-
 
     @AfterClass
     public void quitBrowser() {
