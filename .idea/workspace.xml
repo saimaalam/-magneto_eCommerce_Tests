@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9522c266-44f4-4c62-9126-0fc38606c4e5" name="Changes" comment="init">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/config/config.propertise" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/config.propertise" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/createAccount/CreateAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/createAccount/CreateAccountTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/login/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/login/LoginTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +57,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book">
+  <component name="RunManager" selected="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml">
     <configuration name="CreateAccountTests.TC_1_User_can_create_account" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MagentoECommerce_Tests" />
       <extension name="coverage">
@@ -135,9 +141,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" />
         <item itemvalue="TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book" />
         <item itemvalue="TestNG.LoginTests.TC_4_registered_user_can_sign_in" />
-        <item itemvalue="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" />
         <item itemvalue="TestNG.MyAccountTests" />
         <item itemvalue="TestNG.CreateAccountTests.TC_1_User_can_create_account" />
       </list>
@@ -255,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730479193299</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="init">
+      <option name="closed" value="true" />
+      <created>1730479447763</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1730479447763</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -267,7 +281,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/base/BaseTests.java</url>
-          <line>80</line>
+          <line>104</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

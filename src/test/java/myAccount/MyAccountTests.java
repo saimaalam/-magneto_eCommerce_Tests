@@ -15,12 +15,17 @@ public class MyAccountTests extends BaseTests {
 
     private MyAccountPage myAccountPage;
 
-    @Test(dataProvider = "LoginDatafromConfiguration", dataProviderClass = LoginTest_DataProvider.class, description = "login before a test execution")
+    @Test(dataProvider = "LoginDatafromRegistration", dataProviderClass = LoginTest_DataProvider.class, description = "login before a test execution")
     public void loginBeforeTest(String email, String password, String fname, String lname) {
         try {
             test.log(Status.INFO, "login with " + "Email: " + email);
             myAccountPage = loginUser(email, password);
-            test.pass("User have logged in");
+            if(myAccountPage.getMyAccountpageHeader().equals("My Account")){
+                test.pass("User have logged in");
+            }
+            else {
+                test.fail("Login failed");
+            }
         } catch (Exception e) {
             test.fail("User can not login due to " + e.getMessage().split("\n")[0]);
         }

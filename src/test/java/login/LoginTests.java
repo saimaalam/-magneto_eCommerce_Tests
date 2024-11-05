@@ -7,12 +7,14 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import utils.LoginTest_DataProvider;
 
 public class LoginTests extends BaseTests {
-    @Test(description = "Validate user can login with valid credentials", dataProvider = "LoginDatafromConfiguration", dataProviderClass = LoginTest_DataProvider.class)
+    @Test(description = "Validate user can login with valid credentials", dataProvider ="LoginDatafromConfiguration" , dataProviderClass = LoginTest_DataProvider.class)
     public void TC_4_registered_user_can_sign_in(String email, String password, String fname, String lname) {
         String stepDescription="";
+        SoftAssert softassert= new SoftAssert();
         try {
             stepDescription="Step1: Click on Sign-in link";
             test.log(Status.INFO, stepDescription);
@@ -29,9 +31,10 @@ public class LoginTests extends BaseTests {
             test.log(Status.INFO, stepDescription);
             String header = loginPage.getHearder();
             if (header.equals("Customer Login")) {
-                test.pass("Step3: Passed. Login page header is showing correctly." +
-                        "Expected : Customer Login" + "Actual : " + header);
+                test.pass("Step3: Passed. Login page header is showing correctly. " +
+                        "Expected : Customer Login " + "Actual : " + header);
             } else {
+                softassert.assertEquals(header,"Customer Login");
                 test.fail("Step3: Failed. Header is not showing correctly. " +
                         "Expected : Customer Login " + "Actual : " + header);
             }
@@ -64,6 +67,7 @@ public class LoginTests extends BaseTests {
                 test.fail("Step7: Failed. User is not redirect to homepage");
                 Assert.assertTrue(homePage.isHomepageUrlShowing());
             }
+            softassert.assertAll();
 
         } catch (AssertionError e) {
             test.log(Status.FAIL, "This test is failed due to an assertion error in "+stepDescription+"  " +e.getMessage());

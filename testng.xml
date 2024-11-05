@@ -2,12 +2,8 @@
 <suite name="Magento eCommerce Suite">
     <test name="My Account Tests">
         <classes>
-            <class name="createAccount.CreateAccountTests">
-                <methods>
-                    <exclude name="TC_1_User_can_create_account"></exclude>
-                </methods>
-            </class>
-            <class name="login.LoginTests"></class>
+            <class name="createAccount.CreateAccountTests"/>
+            <class name="login.LoginTests"/>
             <class name="myAccount.MyAccountTests"/>
         </classes>
     </test>
