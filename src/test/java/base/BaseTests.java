@@ -105,10 +105,11 @@ public class BaseTests {
 
     @AfterMethod
     public void takeScreenshot(ITestResult result) {
+        String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM-dd-yyyy_HH_mm_ss"));
         if (ITestResult.FAILURE == result.getStatus()) {
             capture = (TakesScreenshot) driver;
             File screenshot = capture.getScreenshotAs(OutputType.FILE);
-            File destination = new File("screenshots/" + result.getName() + ".png");
+            File destination = new File("screenshots/" + result.getName() +"_"+timeStamp+ ".png");
             try {
                 Files.move(screenshot, destination);
             } catch (IOException e) {

@@ -53,13 +53,13 @@ public class MyAccountPage {
         return driver.findElement(successMassage).getText();
     }
 
-    public HomePage clickLogoutButton() {
+    public HomePage clickSignoutButton() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(dropdownMenu)));
         driver.findElement(dropdownMenu).click();
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(logoutButton)));
         driver.findElement(logoutButton).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.urlToBe("https://magento.softwaretestingboard.com/"));
         return new HomePage(driver);
     }
 

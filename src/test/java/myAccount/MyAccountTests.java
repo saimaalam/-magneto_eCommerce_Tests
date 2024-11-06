@@ -9,30 +9,36 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.AddNewAddress_DataProvider;
 import utils.LoginTest_DataProvider;
+import utils.TestDataStorage;
 
 
 public class MyAccountTests extends BaseTests {
 
     private MyAccountPage myAccountPage;
-
-    @Test(dataProvider = "LoginDataProvider", dataProviderClass = LoginTest_DataProvider.class, description = "login before a test execution")
-    public void loginBeforeTest(String email, String password, String fname, String lname) {
+    public void loginBeforeTest(String email, String password) {
         try {
-            test.log(Status.INFO, "login with " + "Email: " + email);
+            test.log(Status.INFO, "Prerequisite Step1 :Login with " + "Email: " + email);
             myAccountPage = loginUser(email, password);
             if (myAccountPage.getMyAccountpageHeader().equals("My Account")) {
-                test.pass("User have logged in");
+                test.pass("Prerequisite Step1 : Passed. User have logged in");
             } else {
-                test.fail("Login failed");
+                test.fail("Prerequisite Step1 : Failed. Login failed");
             }
         } catch (Exception e) {
-            test.fail("User can not login due to " + e.getMessage().split("\n")[0]);
+            test.fail("Prerequisite Step1 : Failed. User can not login due to " + e.getMessage().split("\n")[0]);
         }
 
     }
 
-    @Test(description = "Verify that user can add new address in the address book", dataProvider = "AddNewAddressData", dataProviderClass = AddNewAddress_DataProvider.class, dependsOnMethods = {"loginBeforeTest"})
+    @Test(description = "Verify that user can add new address in the address book", dataProvider = "AddNewAddressData", dataProviderClass = AddNewAddress_DataProvider.class)
     public void TC_6_Add_new_address_in_address_book(String phoneNumber, String streetAddress1, String city, String zipCode, String state, String country) {
+        LoginTest_DataProvider dataProvider= new LoginTest_DataProvider();
+        if(dataProvider.getTestDataProverName().equalsIgnoreCase("Configuration")){
+            loginBeforeTest(TestDataStorage.configuredEmail,TestDataStorage.configuredPassword);
+        }
+        if(dataProvider.getTestDataProverName().equalsIgnoreCase("Registration")){
+            loginBeforeTest(TestDataStorage.registeredEmail,TestDataStorage.registeredPassword);
+        }
         String stepDescription = "";
         try {
             stepDescription = "Step:1 Click on the 'Address Book' link";
@@ -89,7 +95,7 @@ public class MyAccountTests extends BaseTests {
             test.log(Status.FAIL, "This test is failed due to an assertion error in " + stepDescription + " " + e.getMessage().split("\n")[0]);
             throw e;
         } catch (TimeoutException e) {
-            test.log(Status.FAIL, "This test is failed due to timeout in " +stepDescription +" "+ e.getMessage().split("\n")[0]);
+            test.log(Status.FAIL, "This test is failed due to timeout in " + stepDescription + " " + e.getMessage().split("\n")[0]);
             throw e;
 
         } catch (NoSuchElementException e) {
@@ -102,4 +108,49 @@ public class MyAccountTests extends BaseTests {
         }
 
     }
+    @Test(description = "Verify that user can sign out")
+    public void TC_5_user_can_sign_out() {
+        LoginTest_DataProvider dataProvider= new LoginTest_DataProvider();
+        if(dataProvider.getTestDataProverName().equalsIgnoreCase("Configuration")){
+            loginBeforeTest(TestDataStorage.configuredEmail,TestDataStorage.configuredPassword);
+        }
+        if(dataProvider.getTestDataProverName().equalsIgnoreCase("Registration")){
+            loginBeforeTest(TestDataStorage.registeredEmail,TestDataStorage.registeredPassword);
+        }
+
+        String stepDescription = "";
+
+        try {
+            // Step 1: Click on logout button
+            stepDescription = "Step 1: Click on logout button";
+            test.log(Status.INFO, stepDescription);
+            myAccountPage.clickSignoutButton();
+            test.pass("Step 1: Passed. Logout button clicked");
+
+            // Step 2: Verify user is redirected to the homepage
+            stepDescription = "Step 2: Verify user is redirected to the homepage";
+            test.log(Status.INFO, stepDescription);
+            if (homePage.isHomepageUrlShowing()) {
+                test.pass("Step 2: Passed. User is redirected to homepage");
+            } else {
+                test.fail("Step 2: Failed. User is not redirected to homepage");
+                Assert.assertTrue(homePage.isHomepageUrlShowing(), "User was not redirected to homepage after logout");
+            }
+
+        } catch (AssertionError e) {
+            test.log(Status.FAIL, "This test failed due to an assertion error in " + stepDescription + ": " + e.getMessage().split("\n")[0]);
+            throw e;
+        } catch (TimeoutException e) {
+            test.log(Status.FAIL, "This test failed due to a timeout in " + stepDescription + ": " + e.getMessage().split("\n")[0]);
+            throw e;
+        } catch (NoSuchElementException e) {
+            String conciseMessage = " - Element not found: " + e.getMessage().split("\n")[0];
+            test.log(Status.FAIL, "This test failed due to an element not found in " + stepDescription + ": " + conciseMessage);
+            throw e;
+        } catch (Exception e) {
+            test.log(Status.FAIL, "This test failed due to an exception in " + stepDescription + ": " + e.getMessage().split("\n")[0]);
+            throw e;
+        }
+    }
 }
+

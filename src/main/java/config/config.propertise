@@ -1,5 +1,5 @@
 #Enter Browser name. Available option: chrome,firefox,ie,edge. If you keep it null chrome will be used as default browser.
-browser=firefox
+browser=chrome
 
 #Enter Data provider name for test data.
 #Enter'Registration' if you are running CreateAccountTests before LoginTests.This data provider will give the data which has been used to test create a new account.

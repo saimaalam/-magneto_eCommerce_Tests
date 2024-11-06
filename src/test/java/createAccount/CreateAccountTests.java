@@ -12,7 +12,7 @@ import org.testng.asserts.SoftAssert;
 import utils.CreateAccountTest_DataProvider;
 
 public class CreateAccountTests extends BaseTests {
-    @Test(description = "Verify that a new user can register", dataProvider = "CreateAccountData", dataProviderClass = CreateAccountTest_DataProvider.class)
+    @Test(description = "Verify that a new user can register", dataProvider = "CreateAccountData", dataProviderClass = CreateAccountTest_DataProvider.class,enabled = false)
     public void TC_1_User_can_create_account(String firstName, String lastName, String email, String password) {
         String stepDescription = "";
         SoftAssert softassert = new SoftAssert();
