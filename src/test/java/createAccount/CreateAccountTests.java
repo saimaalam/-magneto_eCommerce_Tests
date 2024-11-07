@@ -12,7 +12,7 @@ import org.testng.asserts.SoftAssert;
 import utils.CreateAccountTest_DataProvider;
 
 public class CreateAccountTests extends BaseTests {
-    @Test(description = "Verify that a new user can register", dataProvider = "CreateAccountData", dataProviderClass = CreateAccountTest_DataProvider.class,enabled = false)
+    @Test(description = "Verify that a new user can register", dataProvider = "CreateAccountData", dataProviderClass = CreateAccountTest_DataProvider.class,enabled = true)
     public void TC_1_User_can_create_account(String firstName, String lastName, String email, String password) {
         String stepDescription = "";
         SoftAssert softassert = new SoftAssert();
@@ -76,26 +76,22 @@ public class CreateAccountTests extends BaseTests {
                 Assert.assertEquals(myAccountPage.getMyAccountpageHeader(), "My Account");
             }
 
-           /* test.log(Status.INFO, "Click on logout button");
-            myAccountPage.clickLogoutButton();
-            test.log(Status.INFO, "Redirect to home page");
-            if (homePage.isSigninLinklPresent()) {
-                test.pass("User is redirect to home page");
-            } else {
-                test.fail("User is not redirect to home page");
-            }*/
         } catch (AssertionError e) {
+            takeFailedStepScreenshot("Assertion_Error");
             test.log(Status.FAIL, "This test is failed due to an assertion error in " + stepDescription + "  " + e.getMessage());
             throw e;
         } catch (TimeoutException e) {
+            takeFailedStepScreenshot("Timeout_Error");
             test.log(Status.FAIL, "This test is failed due to timeout in " + stepDescription + "  " + e.getMessage());
             throw e;
 
         } catch (NoSuchElementException e) {
+            takeFailedStepScreenshot("NoSuchElement_Error");
             String conciseMessage = " - Element not found: " + e.getMessage().split("\n")[0];
             test.log(Status.FAIL, "This test is failed due to an element not found in " + stepDescription + "  " + conciseMessage);
             throw e;
         } catch (Exception e) {
+            takeFailedStepScreenshot("Exception_Error");
             test.log(Status.FAIL, "This test is failed due to an exception in " + stepDescription + "  " + e.getMessage());
             throw e;
         }

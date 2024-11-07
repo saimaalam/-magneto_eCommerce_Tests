@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9522c266-44f4-4c62-9126-0fc38606c4e5" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/report/ExtentReport_11-07-2024_15_57_28.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/ExtentReport_11-07-2024_16_05_13.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/ExtentReport_11-07-2024_16_05_43.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/ExtentReport_11-07-2024_16_08_36.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/ExtentReport_11-07-2024_17_00_32.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/ExtentReport_11-07-2024_17_09_52.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshots/TC_5_user_can_sign_out_11-07-2024_16_05_39.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshots/TC_5_user_can_sign_out_11-07-2024_16_06_07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshots/TC_5_user_can_sign_out_11-07-2024_16_08_55.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/LoginTest_DataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/LoginTest_DataProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/config.propertise" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/config.propertise" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/MyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/MyAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/createAccount/CreateAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/createAccount/CreateAccountTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/login/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/login/LoginTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +51,7 @@
     "TestNG.LoginTests.TC_4_registered_user_can_sign_in.executor": "Run",
     "TestNG.MyAccountTests.TC_5_user_can_sign_out.executor": "Run",
     "TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book.executor": "Run",
+    "TestNG.MyAccountTests.TC_7_correct_address_shows_in_address_book_after_adding_a_new_address.executor": "Run",
     "TestNG.MyAccountTests.executor": "Run",
     "TestNG.MyAccountTests.loginBeforeTest.executor": "Run",
     "git-widget-placeholder": "master",
@@ -65,29 +61,11 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book">
+  <component name="RunManager" selected="TestNG.MyAccountTests.TC_7_correct_address_shows_in_address_book_after_adding_a_new_address">
     <configuration name="E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MagentoECommerce_Tests" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginTests.TC_4_registered_user_can_sign_in" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="MagentoECommerce_Tests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="login.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="login" />
-      <option name="MAIN_CLASS_NAME" value="login.LoginTests" />
-      <option name="METHOD_NAME" value="TC_4_registered_user_can_sign_in" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -130,6 +108,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyAccountTests.TC_7_correct_address_shows_in_address_book_after_adding_a_new_address" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MagentoECommerce_Tests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="myAccount.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="myAccount" />
+      <option name="MAIN_CLASS_NAME" value="myAccount.MyAccountTests" />
+      <option name="METHOD_NAME" value="TC_7_correct_address_shows_in_address_book_after_adding_a_new_address" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyAccountTests.loginBeforeTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MagentoECommerce_Tests" />
       <extension name="coverage">
@@ -150,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.MyAccountTests.TC_7_correct_address_shows_in_address_book_after_adding_a_new_address" />
         <item itemvalue="TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book" />
-        <item itemvalue="TestNG.MyAccountTests.TC_5_user_can_sign_out" />
         <item itemvalue="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" />
+        <item itemvalue="TestNG.MyAccountTests.TC_5_user_can_sign_out" />
         <item itemvalue="TestNG.MyAccountTests.loginBeforeTest" />
-        <item itemvalue="TestNG.LoginTests.TC_4_registered_user_can_sign_in" />
       </list>
     </recent_temporary>
   </component>
@@ -294,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730812071449</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="init">
+      <option name="closed" value="true" />
+      <created>1730978143224</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1730978143224</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -306,7 +310,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/base/BaseTests.java</url>
-          <line>82</line>
+          <line>83</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

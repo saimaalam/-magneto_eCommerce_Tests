@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MyAccountPage {
     private final By successMassage = By.xpath("//div[@class='message-success success message']//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']");
-    private final By MyAccountpageHeader = By.className("base");
+    private final By myAccountPageHeader = By.className("base");
     private final By dropdownMenu = By.xpath("//a[@class='action skip contentarea']/following::ul[1]/li[@class='customer-welcome']//button");
     private final By logoutButton = By.xpath("//a[@class='action skip contentarea']/following::ul[1]/li[2]/div/ul/li[@class='authorization-link']/a");
     WebDriverWait wait;
@@ -29,6 +29,7 @@ public class MyAccountPage {
     private final By countryDropdown = By.id("country");
     private final By saveAddressButton = By.xpath("//button[@title='Save Address']");
     private final By addNewAddressButton = By.xpath("//button[@title='Add New Address']");
+    private By noAdditionalAddressText=By.xpath("//p[text()='You have no other address entries in your address book.']");
 
     public MyAccountPage(WebDriver driver) {
 
@@ -37,9 +38,9 @@ public class MyAccountPage {
     }
 
     public String getMyAccountpageHeader() {
-        WebElement message = driver.findElement(MyAccountpageHeader);
+        WebElement message = driver.findElement(myAccountPageHeader);
         String text = "";
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(MyAccountpageHeader)));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(myAccountPageHeader)));
         if (message.isDisplayed()) {
             text = message.getText();
         } else {
@@ -138,6 +139,20 @@ public class MyAccountPage {
         scrollToElement(driver.findElement(saveAddressButton));
         driver.findElement(saveAddressButton).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+    }
+    public String getBillingAddressInformation() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(myAccountPageHeader));
+        String billingAddress="";
+        List<WebElement> text= driver.findElements(noAdditionalAddressText);
+        if(text.isEmpty()){
+            billingAddress=driver.findElement(By.xpath("//table[@id='additional-addresses-table']/tbody/tr[1]")).getText();
+
+        }
+        else {
+            scrollToElement(driver.findElement(By.xpath("//div[@class='box box-address-billing']/div[@class='box-content']")));
+            billingAddress= driver.findElement(By.xpath("//div[@class='box box-address-billing']/div[@class='box-content']/address")).getText();
+        }
+        return billingAddress;
     }
 
 

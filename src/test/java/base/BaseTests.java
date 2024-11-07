@@ -2,6 +2,7 @@ package base;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.google.common.io.Files;
@@ -109,15 +110,15 @@ public class BaseTests {
         if (ITestResult.FAILURE == result.getStatus()) {
             capture = (TakesScreenshot) driver;
             File screenshot = capture.getScreenshotAs(OutputType.FILE);
-            File destination = new File("screenshots/" + result.getName() +"_"+timeStamp+ ".png");
+            File destination = new File(System.getProperty("user.dir") + "/screenshots/" + result.getName() + "_" + timeStamp + ".png");
             try {
                 Files.move(screenshot, destination);
+                test.fail("Test step failed. See screenshot below:",
+                        MediaEntityBuilder.createScreenCaptureFromPath(System.getProperty("user.dir") + "/screenshots/" + result.getName() + "_" + timeStamp + ".png").build());
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
-
     }
 
     @AfterClass
@@ -140,6 +141,21 @@ public class BaseTests {
         home.clickCustomerMenu();
         home.clickMyAccountLink();
         return new MyAccountPage(driver);
+    }
+
+    public void takeFailedStepScreenshot(String stepName) {
+        String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM-dd-yyyy_HH_mm_ss"));
+        capture = (TakesScreenshot) driver;
+        File screenshot = capture.getScreenshotAs(OutputType.FILE);
+        String screenshotPath = System.getProperty("user.dir") + "/screenshots/" + stepName + "_" + timeStamp + ".png";
+        File destination = new File(screenshotPath);
+        try {
+            Files.move(screenshot, destination);
+            test.fail("Screenshot attached for failed step:",
+                    MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

@@ -72,17 +72,21 @@ public class LoginTests extends BaseTests {
             softassert.assertAll();
 
         } catch (AssertionError e) {
+            takeFailedStepScreenshot("Assertion_Error");
             test.log(Status.FAIL, "This test is failed due to an assertion error in " + stepDescription + "  " + e.getMessage());
             throw e;
         } catch (TimeoutException e) {
+            takeFailedStepScreenshot("Timeout_Error");
             test.log(Status.FAIL, "This test is failed due to timeout in " + stepDescription + "  " + e.getMessage());
             throw e;
 
         } catch (NoSuchElementException e) {
+            takeFailedStepScreenshot("NoSuchElement_Error");
             String conciseMessage = " - Element not found: " + e.getMessage().split("\n")[0];
             test.log(Status.FAIL, "This test is failed due to an element not found in " + stepDescription + "  " + conciseMessage);
             throw e;
         } catch (Exception e) {
+            takeFailedStepScreenshot("Exception_Error");
             test.log(Status.FAIL, "This test is failed due to an exception in " + stepDescription + "  " + e.getMessage());
             throw e;
         }
