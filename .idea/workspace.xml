@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9522c266-44f4-4c62-9126-0fc38606c4e5" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/report/ExtentReport_11-07-2024_15_57_28.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/ExtentReport_11-07-2024_16_05_13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/ExtentReport_11-07-2024_16_05_43.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/ExtentReport_11-07-2024_16_08_36.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/ExtentReport_11-07-2024_17_00_32.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/ExtentReport_11-07-2024_17_09_52.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/TC_5_user_can_sign_out_11-07-2024_16_05_39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/TC_5_user_can_sign_out_11-07-2024_16_06_07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/TC_5_user_can_sign_out_11-07-2024_16_08_55.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/config.propertise" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/config.propertise" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/MyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/MyAccountPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/createAccount/CreateAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/createAccount/CreateAccountTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/LoginTest_DataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/LoginTest_DataProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,11 +60,12 @@
     "TestNG.MyAccountTests.loginBeforeTest.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Magento eCommerce Tests/-magneto_eCommerce_Tests",
     "onboarding.tips.debug.path": "E:/Magento eCommerce Tests/Magento eCommerce Tests/src/main/java/org/example/Main.java",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml">
+  <component name="RunManager" selected="TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book">
     <configuration name="E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MagentoECommerce_Tests" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -143,10 +150,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" />
-        <item itemvalue="TestNG.MyAccountTests.TC_5_user_can_sign_out" />
-        <item itemvalue="TestNG.MyAccountTests.loginBeforeTest" />
         <item itemvalue="TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book" />
+        <item itemvalue="TestNG.MyAccountTests.TC_5_user_can_sign_out" />
+        <item itemvalue="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" />
+        <item itemvalue="TestNG.MyAccountTests.loginBeforeTest" />
         <item itemvalue="TestNG.LoginTests.TC_4_registered_user_can_sign_in" />
       </list>
     </recent_temporary>

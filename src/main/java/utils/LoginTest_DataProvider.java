@@ -20,6 +20,9 @@ public class LoginTest_DataProvider {
             properties.load(input);
             dataProviderSource = properties.getProperty("dataProvider");
             System.out.println(dataProviderSource);
+            if(dataProviderSource.equalsIgnoreCase("Configuration")){
+                setConfiguredLoginData();
+            }
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -42,6 +45,10 @@ public class LoginTest_DataProvider {
             lname = properties.getProperty("lastname");
             email = properties.getProperty("email");
             password = properties.getProperty("password");
+            TestDataStorage.configuredFirstName = fname;
+            TestDataStorage.configuredLastName = lname;
+            TestDataStorage.configuredEmail = email;
+            TestDataStorage.configuredPassword = password;
             System.out.println("First Name : " + fname);
             System.out.println("Last Name : " + lname);
             System.out.println("Email : " + email);
@@ -64,10 +71,6 @@ public class LoginTest_DataProvider {
 
         if (dataProvider.equalsIgnoreCase("Configuration")) {
             setConfiguredLoginData();
-            TestDataStorage.configuredFirstName = fname;
-            TestDataStorage.configuredLastName = lname;
-            TestDataStorage.configuredEmail = email;
-            TestDataStorage.configuredPassword = password;
         }
         if (dataProvider.equalsIgnoreCase("Registration")) {
             fname = TestDataStorage.registeredFirstName;
