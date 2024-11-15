@@ -13,7 +13,7 @@ public class LoginTest_DataProvider {
     Properties properties = new Properties();
     String projectPath = System.getProperty("user.dir");
 
-    public String getTestDataProverName() {
+    public String getTestDataProviderName() {
         String dataProviderSource = "";
         try {
             InputStream input = new FileInputStream(projectPath + "/src/main/java/config/config.propertise");
@@ -67,7 +67,7 @@ public class LoginTest_DataProvider {
 
     @DataProvider(name = "LoginDataProvider")
     public Object[][] generateLoginData() {
-        String dataProvider = getTestDataProverName();
+        String dataProvider = getTestDataProviderName();
 
         if (dataProvider.equalsIgnoreCase("Configuration")) {
             setConfiguredLoginData();

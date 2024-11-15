@@ -1,6 +1,10 @@
 #Enter Browser name. Available option: chrome,firefox,ie,edge. If you keep it null chrome will be used as default browser.
 browser=chrome
 
+#Enter headless=true for run tests in headless mode.Enter headless=false to disabled headless mode. Default value is false.
+#NOTE: headless option is available for chrome and firefox. So keep the browser chrome/firefox for run in headless mode.
+headless=true
+
 #Enter Data provider name for test data.
 #Enter'Registration' if you are running CreateAccountTests before LoginTests.This data provider will give the data which has been used to test create a new account.
 #Enter 'Configuration' if you are running login test independently and didn't run CreateAccountTests before login. If you select this data provider, you have enter your own login data
@@ -11,3 +15,5 @@ firstname=Amos
 lastname=Dietrich
 email=AmosDietrich@gmail.com
 password=Abcdefgh!
+
+

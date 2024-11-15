@@ -34,7 +34,7 @@ public class MyAccountTests extends BaseTests {
     @Test(description = "Verify that user can sign out")
     public void TC_5_user_can_sign_out() {
         LoginTest_DataProvider dataProvider = new LoginTest_DataProvider();
-        String dataProviderSource = dataProvider.getTestDataProverName();
+        String dataProviderSource = dataProvider.getTestDataProviderName();
         if (dataProviderSource.equalsIgnoreCase("Configuration")) {
             System.out.println(TestDataStorage.configuredEmail + "  " + TestDataStorage.configuredPassword);
             loginBeforeTest(TestDataStorage.configuredEmail, TestDataStorage.configuredPassword);
@@ -85,7 +85,7 @@ public class MyAccountTests extends BaseTests {
     @Test(description = "Verify that user can add new address in the address book", dataProvider = "AddNewAddressData", dataProviderClass = AddNewAddress_DataProvider.class)
     public void TC_6_Add_new_address_in_address_book(String phoneNumber, String streetAddress1, String city, String zipCode, String state, String country) {
         LoginTest_DataProvider dataProvider = new LoginTest_DataProvider();
-        String dataProviderSource = dataProvider.getTestDataProverName();
+        String dataProviderSource = dataProvider.getTestDataProviderName();
         if (dataProviderSource.equalsIgnoreCase("Configuration")) {
             loginBeforeTest(TestDataStorage.configuredEmail, TestDataStorage.configuredPassword);
         }
@@ -254,6 +254,7 @@ public class MyAccountTests extends BaseTests {
         }
 
     }
+
 
 }
 

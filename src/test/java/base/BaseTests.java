@@ -14,8 +14,10 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -25,6 +27,7 @@ import java.lang.reflect.Method;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Collections;
 import java.util.Properties;
 
 public class BaseTests {
@@ -36,27 +39,39 @@ public class BaseTests {
     private WebDriver driver;
     private TakesScreenshot capture;
     private String browser;
+    private boolean isHeadless;
+    protected String dataProviderSource;
 
-    public String getBrowserName() {
+
+    public void loadConfig() {
         Properties properties = new Properties();
         String projectPath = System.getProperty("user.dir");
         try {
             InputStream input = new FileInputStream(projectPath + "/src/main/java/config/config.propertise");
             properties.load(input);
-            browser = properties.getProperty("browser");
-            System.out.println(browser);
+            browser = properties.getProperty("browser").toLowerCase();
+            isHeadless = Boolean.parseBoolean(properties.getProperty("headless", "false"));
+            System.out.println("Browser: " + browser + ", Headless: " + isHeadless);
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
             throw new RuntimeException(e);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
             e.printStackTrace();
-            throw new RuntimeException(e);
+            throw new RuntimeException("Failed to load configuration file.");
         }
-        return browser;
     }
 
+    private ChromeOptions getChromeOptions() {
+        ChromeOptions options = new ChromeOptions();
+        if (isHeadless) {
+            options.addArguments("--headless");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--window-size=1920,1080");
+        }
+        options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+        return options;
+    }
 
     @BeforeSuite
     public void setupReport() {
@@ -71,15 +86,20 @@ public class BaseTests {
 
     @BeforeClass
     public void setUrl() {
-        String browserName = getBrowserName().toLowerCase();
-        switch (browserName) {
+        loadConfig();
+
+        switch (browser) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(getChromeOptions());
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                if (isHeadless) {
+                    firefoxOptions.addArguments("--headless");
+                }
+                driver = new FirefoxDriver(firefoxOptions);
                 break;
             case "edge":
                 WebDriverManager.edgedriver().setup();
@@ -91,8 +111,9 @@ public class BaseTests {
                 break;
             default:
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(getChromeOptions());
         }
+
         driver.get("https://magento.softwaretestingboard.com");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
         driver.manage().window().maximize();
@@ -157,5 +178,6 @@ public class BaseTests {
             e.printStackTrace();
         }
     }
+
 }
 
