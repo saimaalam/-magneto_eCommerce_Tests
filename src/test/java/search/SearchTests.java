@@ -2,10 +2,12 @@ package search;
 
 import base.BaseTests;
 import com.aventstack.extentreports.Status;
+import magneto_eCommercePages.SearchResultPage;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import utils.LoginTest_DataProvider;
 import utils.TestDataStorage;
 
@@ -15,24 +17,39 @@ public class SearchTests extends BaseTests {
     public void TC_8_user_can_search_for_a_product() {
 
         String stepDescription = "";
-        String productName="Tea";
+        SoftAssert softAssert= new SoftAssert();
+        String productName="Tea";//replace it with data-provider/read from property file
 
         try {
             // Step 1: Search for a 'Product Name' into the search bar
-            stepDescription = "Step 1: Search for a 'Product Name' into the search bar";
+            stepDescription = "Step 1: Search for a 'Product Name' using the search bar";
             test.log(Status.INFO, stepDescription);
-            homePage.searchProduct(productName);
+            SearchResultPage searchResultPage= homePage.searchProduct(productName);
             test.pass("Step 1: Passed.Search button is clicked");
 
-            // Step 2: Verify user is redirected to the homepage
-            stepDescription = "Step 2: Verify user is redirected to the homepage";
+            // Step 2: Verify that the search result is displayed
+            stepDescription = "Verify that the search result is displayed";
             test.log(Status.INFO, stepDescription);
-            if (homePage.isHomepageUrlShowing()) {
-                test.pass("Step 2: Passed. User is redirected to homepage");
-            } else {
-                test.fail("Step 2: Failed. User is not redirected to homepage");
-                Assert.assertTrue(homePage.isHomepageUrlShowing(), "User was not redirected to homepage after logout");
+            if(searchResultPage.isSearchResultsDisplayed()){
+                test.pass("Step 2: Passed. Search result is displayed");
             }
+            else {
+                test.fail("Step 2: Failed. No Search result is showing");
+                softAssert.assertTrue(searchResultPage.isSearchResultsDisplayed());
+            }
+
+            // Step 3: Verify the correct header is showing
+            stepDescription = "Step 2: Verify the correct header is showing";
+            test.log(Status.INFO, stepDescription);
+            String expeactedHeader= "Search results for: "+"'"+productName+"'";
+            if (searchResultPage.getPageTitle().equals(expeactedHeader)) {
+                test.pass("Step 3: Passed. Correct header is showing");
+            } else {
+                test.fail("Step 3: Failed. Header is not showing correctly.");
+                softAssert.assertEquals(searchResultPage.getPageTitle(),expeactedHeader);
+            }
+
+            softAssert.assertAll();
 
         } catch (AssertionError e) {
             takeFailedStepScreenshot("Assertion_Error");

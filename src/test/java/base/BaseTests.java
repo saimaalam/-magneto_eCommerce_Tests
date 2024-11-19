@@ -134,8 +134,6 @@ public class BaseTests {
             File destination = new File(System.getProperty("user.dir") + "/screenshots/" + result.getName() + "_" + timeStamp + ".png");
             try {
                 Files.move(screenshot, destination);
-                test.fail("Test step failed. See screenshot below:",
-                        MediaEntityBuilder.createScreenCaptureFromPath(System.getProperty("user.dir") + "/screenshots/" + result.getName() + "_" + timeStamp + ".png").build());
             } catch (IOException e) {
                 e.printStackTrace();
             }

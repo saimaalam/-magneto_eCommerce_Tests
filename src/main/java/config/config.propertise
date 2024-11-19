@@ -3,7 +3,7 @@ browser=chrome
 
 #Enter headless=true for run tests in headless mode.Enter headless=false to disabled headless mode. Default value is false.
 #NOTE: headless option is available for chrome and firefox. So keep the browser chrome/firefox for run in headless mode.
-headless=true
+headless=false
 
 #Enter Data provider name for test data.
 #Enter'Registration' if you are running CreateAccountTests before LoginTests.This data provider will give the data which has been used to test create a new account.

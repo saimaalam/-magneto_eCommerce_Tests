@@ -82,6 +82,7 @@ public class HomePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(searchBox)));
         driver.findElement(searchBox).sendKeys(productName);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(searchButton).click();
         return new SearchResultPage(driver);
     }
