@@ -16,4 +16,5 @@ lastname=Dietrich
 email=AmosDietrich@gmail.com
 password=Abcdefgh!
 
-
+#Enter data for search test. Enter a product name to search the product
+productName=jacket

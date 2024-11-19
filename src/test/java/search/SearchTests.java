@@ -18,13 +18,13 @@ public class SearchTests extends BaseTests {
 
         String stepDescription = "";
         SoftAssert softAssert= new SoftAssert();
-        String productName="Tea";//replace it with data-provider/read from property file
+        String product= BaseTests.productName;//replace it with data-provider/read from property file
 
         try {
             // Step 1: Search for a 'Product Name' into the search bar
             stepDescription = "Step 1: Search for a 'Product Name' using the search bar";
             test.log(Status.INFO, stepDescription);
-            SearchResultPage searchResultPage= homePage.searchProduct(productName);
+            SearchResultPage searchResultPage= homePage.searchProduct(product);
             test.pass("Step 1: Passed.Search button is clicked");
 
             // Step 2: Verify that the search result is displayed
@@ -39,7 +39,7 @@ public class SearchTests extends BaseTests {
             }
 
             // Step 3: Verify the correct header is showing
-            stepDescription = "Step 2: Verify the correct header is showing";
+            stepDescription = "Step 3: Verify the correct header is showing";
             test.log(Status.INFO, stepDescription);
             String expeactedHeader= "Search results for: "+"'"+productName+"'";
             if (searchResultPage.getPageTitle().equals(expeactedHeader)) {
@@ -49,11 +49,21 @@ public class SearchTests extends BaseTests {
                 softAssert.assertEquals(searchResultPage.getPageTitle(),expeactedHeader);
             }
 
+            // Step 4: Verify the number of items showing in the toolbar matches with total number of product showing as a search result
+            stepDescription = "Step 4: Verify the number of items showing in the toolbar matches with total number of product showing as a search result";
+            test.log(Status.INFO, stepDescription);
+            if (searchResultPage.getNumberOfProductFromToolbar()==searchResultPage.getNumberOfProductFromSearchResult()) {
+                test.pass("Step 4: Passed. Number of items showing in the toolbar matched with total number of product showing as a search result");
+            } else {
+                test.fail("Step 4: Failed.Number of items showing in the toolbar is not matching with total number of product showing as a search result ");
+                softAssert.assertEquals(searchResultPage.getNumberOfProductFromToolbar(),searchResultPage.getNumberOfProductFromSearchResult());
+            }
+
             softAssert.assertAll();
 
         } catch (AssertionError e) {
             takeFailedStepScreenshot("Assertion_Error");
-            test.log(Status.FAIL, "This test failed due to an assertion error in " + stepDescription + ": " + e.getMessage().split("\n")[0]);
+            test.log(Status.FAIL, "This test failed due to an assertion error in " + stepDescription + ": " + e.getMessage());
             throw e;
         } catch (TimeoutException e) {
             takeFailedStepScreenshot("Timeout_Error");

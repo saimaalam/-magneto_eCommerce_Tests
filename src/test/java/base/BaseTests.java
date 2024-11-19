@@ -40,6 +40,7 @@ public class BaseTests {
     private TakesScreenshot capture;
     private String browser;
     private boolean isHeadless;
+    protected static String productName;
     protected String dataProviderSource;
 
 
@@ -51,7 +52,8 @@ public class BaseTests {
             properties.load(input);
             browser = properties.getProperty("browser").toLowerCase();
             isHeadless = Boolean.parseBoolean(properties.getProperty("headless", "false"));
-            System.out.println("Browser: " + browser + ", Headless: " + isHeadless);
+            productName=properties.getProperty("productName");
+            System.out.println("Browser: " + browser + ", Headless: " + isHeadless +", productName: "+productName);
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
