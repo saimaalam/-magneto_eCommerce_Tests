@@ -164,7 +164,6 @@ public class MyAccountTests extends BaseTests {
         }
 
     }
-
     @Test(description = "Verify that correct address shows in address book after adding a new address", dependsOnMethods = "TC_6_Add_new_address_in_address_book")
     public void TC_7_correct_address_shows_in_address_book_after_adding_a_new_address() {
         String stepDescription = "";
@@ -235,8 +234,8 @@ public class MyAccountTests extends BaseTests {
                 Assert.assertTrue(billingAddressInformation.contains(address_phone));
             }
         } catch (AssertionError e) {
-            takeFailedStepScreenshot("Assertion_Error");
             test.log(Status.FAIL, "This test is failed due to an assertion error in " + stepDescription + " " + e.getMessage().split("\n")[0]);
+            takeFailedStepScreenshot("Assertion_Error");
             throw e;
         } catch (TimeoutException e) {
             takeFailedStepScreenshot("Timeout_Error");

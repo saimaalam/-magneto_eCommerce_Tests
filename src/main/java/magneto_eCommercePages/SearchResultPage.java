@@ -17,7 +17,7 @@ public class SearchResultPage {
     private final By noSearchResultMessage = By.xpath("//div[@class='message notice']/div");
     private final By totalNumberOfProduct = By.xpath("//div[@class='search results']/div[@class='toolbar toolbar-products'][1]/p[@id='toolbar-amount']/span");
     private final By pagination = By.xpath("//div[@class='search results']/div[@class='toolbar toolbar-products'][2]/div[@class='pages']");
-    private final By paginationList = By.xpath("//div[@class='search results']/div[@class='toolbar toolbar-products'][2]/div[@class='pages']/ul/li");
+    private final By paginationList = By.xpath("//div[@class='search results']/div[3]/div[2]//li");
 
     public SearchResultPage(WebDriver driver) {
         this.driver = driver;
@@ -60,15 +60,17 @@ public class SearchResultPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(productListContainer)));
         int numberOfProduct = driver.findElements(productList).size();
-        if (driver.findElement(pagination).isDisplayed()) {
+        if (!driver.findElements(pagination).isEmpty() && driver.findElement(pagination).isDisplayed()) {
             List<WebElement> paginationLinks = driver.findElements(paginationList);
             int numberOfPage = paginationLinks.size();
+            System.out.println(numberOfPage);
             for (int i = 1; i < numberOfPage - 1; i++) {
-                paginationLinks.get(numberOfPage - 1).click();
+                paginationLinks.getLast().click();
                 wait.until(ExpectedConditions.visibilityOf(driver.findElement(productListContainer)));
                 numberOfProduct += driver.findElements(productList).size();
             }
-        } else {
+        }
+        else {
             numberOfProduct = driver.findElements(productList).size();
         }
         System.out.println("SearchResult: "+numberOfProduct);

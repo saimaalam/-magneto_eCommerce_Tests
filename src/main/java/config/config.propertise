@@ -1,5 +1,5 @@
 #Enter Browser name. Available option: chrome,firefox,ie,edge. If you keep it null chrome will be used as default browser.
-browser=chrome
+browser=
 
 #Enter headless=true for run tests in headless mode.Enter headless=false to disabled headless mode. Default value is false.
 #NOTE: headless option is available for chrome and firefox. So keep the browser chrome/firefox for run in headless mode.
@@ -17,4 +17,4 @@ email=AmosDietrich@gmail.com
 password=Abcdefgh!
 
 #Enter data for search test. Enter a product name to search the product
-productName=jacket
+productName= women top

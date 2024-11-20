@@ -7,9 +7,12 @@
     <list default="true" id="9522c266-44f4-4c62-9126-0fc38606c4e5" name="Changes" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/config/config.propertise" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/config.propertise" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/SearchResultPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/magneto_eCommercePages/SearchResultPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/search/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/search/SearchTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/createAccount/CreateAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/createAccount/CreateAccountTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myAccount/MyAccountTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,28 +41,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.CreateAccountTests.TC_1_User_can_create_account.executor": "Run",
-    "TestNG.CreateAccountTests.executor": "Run",
-    "TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml.executor": "Run",
-    "TestNG.LoginTests.TC_4_registered_user_can_sign_in.executor": "Run",
-    "TestNG.MyAccountTests.TC_5_user_can_sign_out.executor": "Run",
-    "TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book.executor": "Run",
-    "TestNG.MyAccountTests.TC_7_correct_address_shows_in_address_book_after_adding_a_new_address.executor": "Run",
-    "TestNG.MyAccountTests.executor": "Run",
-    "TestNG.MyAccountTests.loginBeforeTest.executor": "Run",
-    "TestNG.SearchTests.TC_8_user_can_search_for_a_product.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Magento eCommerce Tests/-magneto_eCommerce_Tests",
-    "onboarding.tips.debug.path": "E:/Magento eCommerce Tests/Magento eCommerce Tests/src/main/java/org/example/Main.java",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.CreateAccountTests.TC_1_User_can_create_account.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CreateAccountTests.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTests.TC_4_registered_user_can_sign_in.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.MyAccountTests.TC_5_user_can_sign_out.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.MyAccountTests.TC_7_correct_address_shows_in_address_book_after_adding_a_new_address.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.MyAccountTests.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.MyAccountTests.loginBeforeTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SearchTests.TC_8_user_can_search_for_a_product.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Magento eCommerce Tests/-magneto_eCommerce_Tests&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;E:/Magento eCommerce Tests/Magento eCommerce Tests/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="TestNG.SearchTests.TC_8_user_can_search_for_a_product">
     <configuration name="E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MagentoECommerce_Tests" />
@@ -146,10 +149,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.SearchTests.TC_8_user_can_search_for_a_product" />
+        <item itemvalue="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" />
         <item itemvalue="TestNG.MyAccountTests.TC_5_user_can_sign_out" />
         <item itemvalue="TestNG.MyAccountTests.TC_7_correct_address_shows_in_address_book_after_adding_a_new_address" />
         <item itemvalue="TestNG.MyAccountTests.TC_6_Add_new_address_in_address_book" />
-        <item itemvalue="TestNG.E:/Magento eCommerce Tests/Magento eCommerce Tests/testng.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -337,8 +340,27 @@
       <option name="project" value="LOCAL" />
       <updated>1732008749349</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="init">
+      <option name="closed" value="true" />
+      <created>1732035987868</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1732035987929</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />

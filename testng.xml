@@ -1,10 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Magento eCommerce Suite">
-    <test name="My Account Tests">
+    <test name="UserFlow">
         <classes>
             <class name="createAccount.CreateAccountTests"/>
             <class name="login.LoginTests"/>
             <class name="myAccount.MyAccountTests"/>
+            <class name="search.SearchTests"></class>
         </classes>
     </test>
 </suite>

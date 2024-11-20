@@ -1,8 +1,6 @@
 package magneto_eCommercePages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -82,7 +80,8 @@ public class HomePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(searchBox)));
         driver.findElement(searchBox).sendKeys(productName);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        //((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(searchButton));
         driver.findElement(searchButton).click();
         return new SearchResultPage(driver);
     }
